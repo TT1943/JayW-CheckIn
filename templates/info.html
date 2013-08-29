@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JayW Checkin System</title>
+</head>
+<body>
+<h1>Welcome to JayW Salon</h1>
+<h2>Event: {{ event.name }}</h2>
+<a href='{% url 'home' %}'>Go Home</a>
+<ul>
+<li><a href='{% url 'create_contact' event.id %}'>Create Contact</a></li>
+</ul>
+<table border="1">
+    {% for contact in contacts %}
+    <tr>
+        <td>{% if contact.name %}Name: {{ contact.name }}{% endif %}</td>
+        <td>{% if contact.email %}Email: {{ contact.email }}{% endif %}</td>
+        <td>{% if contact.phone %}Phone: {{ contact.phone }}{% endif %}</td>
+        <td>{% if contact.wechat %}WeChat: {{ contact.wechat }}{% endif %}</td>
+        <td>
+            {% if not contact.checked %}
+                <a href='{% url 'check' event.id contact.id %}'>Checkin</a>
+            {% else %}
+                Checked!<a href='{% url 'uncheck' event.id contact.id %}'> x</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

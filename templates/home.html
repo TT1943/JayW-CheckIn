@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JayW Checkin System</title>
+</head>
+<body>
+<h1>Welcome to JayW Salon</h1>
+<a href='{% url 'post' %}'>Create Event</a>
+<ul>
+{% for event in events %}
+    <li><a href='{% url 'info' event.id %}'>{{ event.name }}</a></li>
+{% endfor %}
+</ul>
+</body>
+</html>

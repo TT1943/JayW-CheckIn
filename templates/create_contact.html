@@ -1,0 +1,6 @@
+<a href='{% url 'info' event.id %}'>Go Event</a>
+<form action="{% url 'create_contact' event.id %}" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create Contact" />
+</form>
+
