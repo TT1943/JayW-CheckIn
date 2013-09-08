@@ -41,3 +41,30 @@ mark people checked in
 POST /api/event/:id/user/:user_id/uncheckin
 --
 mark people unchecked in
+
+POST /api/users
+--
+Accepting content:
+
+    {
+      "name" : "String",
+      "email" : "String",
+      "phone" : "String",
+      "wechat" : "String"
+    }
+    
+return 302 and redirect to /api/user/:id where :id is the id of the new user
+if email exists, return 409
+
+POST /api/user/:id
+--
+accepting fields of
+
+    {
+      "name" : "String",
+      "email" : "String",
+      "phone" : "String",
+      "wechat" : "String"
+    }
+    
+return 204
