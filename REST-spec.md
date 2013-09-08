@@ -1,7 +1,8 @@
-==GET /api/events
-
+GET /api/events
+--
 get list of all events.
 return
+
     {
       "count" : "int32",
       "events" : [
@@ -11,10 +12,11 @@ return
       ]
     }
 
-==GET /api/event/:id/users
-
+GET /api/event/:id/users
+--
 show list of people info
 return
+
     {
       "count" : "int32"
       "users" : [
@@ -32,10 +34,10 @@ return
       ]
     }
 
-==POST /api/event/:id/users/:user_id/checkin
-
+POST /api/event/:id/user/:user_id/checkin
+--
 mark people checked in
 
-==POST /api/event/:id/users/:user_id/uncheckin
-
-mark people checked in
+POST /api/event/:id/user/:user_id/uncheckin
+--
+mark people unchecked in
